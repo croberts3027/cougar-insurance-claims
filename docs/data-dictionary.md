@@ -149,7 +149,7 @@ Every other table and column name is lower case with underscores.
 
 **Names, not IDs, link people.** `assigned_name`, `created_by_name`, `closed_by_name`, `author_name` and `changed_by` hold the person's name as text. Join them to `users.name` (unique). There is no user ID in those tables.
 
-**Redundant columns exist on purpose.** `money.exposure_type` and `money.coverage_subtype` repeat the exposure's values; `exposures.coverage_limit` repeats `coverages.exposure_limit`; `header.loss_type` repeats `header.lob` in upper case; `matters.file_date` and `filing_date` are identical; `money.net_amount` and `original_amount` equal `amount`. They were kept because the source claim-pull layout has them.
+**Redundant columns exist on purpose.** `money.exposure_type` and `money.coverage_subtype` repeat the exposure's values; `exposures.coverage_limit` repeats `coverages.exposure_limit`; `header.loss_type` repeats `header.lob` in upper case; `matters.file_date` and `filing_date` are identical; `money.net_amount` and `original_amount` equal `amount`. They were kept because real claim extracts have them.
 
 **Always-empty columns.** `exposures.reopen_date` and `coverages.incident_limit` are empty on every row, which is why Postgres stores them as `text`. `activities.retired` is always `0`.
 
