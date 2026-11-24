@@ -43,7 +43,7 @@ Create `.env` from `.env.example` with the student role, then run the first two 
 - Confirm no `.env`, CSV or other data file is committed: `git status`.
 - **Make the repo private before any student forks or branches it.** Forks made while the repo is public stay public after you switch it to private.
 - Add each student as a collaborator (Settings > Collaborators). To let them fork, turn on Settings > General > Allow forking; forks of a private repo are private. Otherwise they work on a branch, which needs write access.
-- **GitHub Pages and the student Quarto sites:** on a private repo, Pages needs GitHub Pro, Team or Enterprise Cloud. Students can get Pro free through the GitHub Student Developer Pack. A Pages site is public even when its repo is private (except on Enterprise Cloud), so ask students before they publish. `quarto publish quarto-pub` is a free alternative, and publishing is optional.
+- **Posit Connect Cloud and the student Quarto sites:** each student needs their own Connect Cloud account. Publishing from GitHub on a free account works only for public repos; private repos need a paid plan. Student forks of the private course repo are private, so free-account students should run `quarto publish posit-connect-cloud` from their own machine instead (Quarto 1.9 or newer). That route renders locally, so the `.env` password never leaves their computer. The GitHub route may need the `PG*` variables stored as secret variables in Connect Cloud, which puts the student role's password there. Published sites are public by default, so ask students before they publish. Publishing is optional.
 
 ## 5. End of term
 

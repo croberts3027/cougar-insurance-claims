@@ -1,0 +1,11 @@
+# Used only by Posit Connect Cloud when you publish from GitHub. Locally, use `pip install -e .`.
+# Add any other package your pages import (for example scikit-learn).
+pandas>=2.2
+SQLAlchemy>=2.0
+psycopg[binary]>=3.1
+python-dotenv>=1.0
+matplotlib>=3.8
+ipykernel>=6.29
+nbformat>=5.9
+nbclient>=0.10
+pyyaml>=6.0
