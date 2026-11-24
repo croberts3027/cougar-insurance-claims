@@ -1,0 +1,45 @@
+---
+title: "Starter analysis (R)"
+description: "Replace this with a one-line summary of the analysis."
+engine: knitr
+---
+
+Copy this file to `notebooks/NN_short-name.qmd` (for example `01_total-loss.qmd`) and edit it. Render it with `quarto preview` from the repo root.
+
+## Question
+
+*TODO: what are you trying to find out?*
+
+## Target and scoring point
+
+*TODO: what do you predict, and as of when?*
+
+## Data pull
+
+```{r}
+source(here::here("src/r/db.R"))
+library(ggplot2)
+
+AS_OF <- "2026-10-07 12:00:00"  # the data is frozen at this moment; never use Sys.time()
+
+claims <- query("SELECT lob, COUNT(*)::int AS claims FROM header GROUP BY lob")
+claims
+```
+
+## Features
+
+*TODO*
+
+## Leakage check
+
+- [ ] Every feature is known at the scoring point (usually first notice of loss).
+- [ ] No notes written after the scoring point are used.
+- [ ] Train and test are split by loss date.
+
+## Results
+
+```{r}
+ggplot(claims, aes(x = lob, y = claims)) +
+  geom_col() +
+  labs(x = "line of business", y = "claims")
+```

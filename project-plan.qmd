@@ -1,0 +1,36 @@
+---
+title: "Project plan"
+---
+
+*Fill this in during the first weeks. See `docs/claims-primer.md` for the business background.*
+
+## Business question
+
+*TODO: who would use the answer, and what decision does it support?*
+
+## Target and type of problem
+
+*TODO: the column or measure you predict, and whether it is classification, regression or survival.*
+
+## Scoring point
+
+*TODO: the moment each claim is scored, usually first notice of loss. You may only use what was known at that moment.*
+
+## Data
+
+*TODO: the tables you use and how they join. Remember there are no foreign keys; join on `claim_id`.*
+
+## Evaluation
+
+*TODO: the metric, the baseline to beat, and the time split (train 2024, validate Jan-Jun 2025, test Jul-Dec 2025).*
+
+## Leakage checks
+
+- [ ] Every feature is known at the scoring point.
+- [ ] No notes written after the scoring point are used.
+- [ ] `damage_severity`, `total_loss` and `damage_description` are not used as first-notice features.
+- [ ] Open claims (about 7%) are handled, since recent claims are immature.
+
+## Risks and open questions
+
+*TODO*

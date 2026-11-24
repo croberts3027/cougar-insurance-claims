@@ -1,0 +1,34 @@
+project:
+  type: website
+  # Only these files become site pages, so README.md and docs/ are left alone.
+  render:
+    - index.qmd
+    - project-plan.qmd
+    - analyses.qmd
+    - weekly-log.qmd
+    - "notebooks/*.qmd"
+
+website:
+  title: "Claims Analytics Project"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: project-plan.qmd
+        text: Project plan
+      - href: analyses.qmd
+        text: Analyses
+      - href: weekly-log.qmd
+        text: Weekly log
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+
+execute:
+  # Re-run a page only when it changes, so Neon is not queried on every render.
+  # Commit the _freeze/ folder; do not commit _site/.
+  freeze: auto
+  warning: false

@@ -1,0 +1,42 @@
+---
+title: "Starter analysis (Python)"
+description: "Replace this with a one-line summary of the analysis."
+jupyter: python3
+---
+
+Copy this file to `notebooks/NN_short-name.qmd` (for example `01_total-loss.qmd`) and edit it. Render it with `quarto preview` from the repo root, with your virtual environment active.
+
+## Question
+
+*TODO: what are you trying to find out?*
+
+## Target and scoring point
+
+*TODO: what do you predict, and as of when?*
+
+## Data pull
+
+```{python}
+from cougar_claims.db import query
+
+AS_OF = "2026-10-07 12:00:00"  # the data is frozen at this moment; never use now()
+
+claims = query("SELECT lob, COUNT(*)::int AS claims FROM header GROUP BY lob")
+claims
+```
+
+## Features
+
+*TODO*
+
+## Leakage check
+
+- [ ] Every feature is known at the scoring point (usually first notice of loss).
+- [ ] No notes written after the scoring point are used.
+- [ ] Train and test are split by loss date.
+
+## Results
+
+```{python}
+claims.plot.bar(x="lob", y="claims", legend=False, ylabel="claims")
+```

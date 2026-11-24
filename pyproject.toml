@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cougar-claims"
+version = "0.1.0"
+description = "Database helpers for the Cougar Insurance Claims course"
+requires-python = ">=3.11"
+# Core only. Add LightGBM, SHAP, MLflow etc. when the syllabus reaches them.
+dependencies = [
+  "pandas>=2.2",
+  "SQLAlchemy>=2.0",
+  "psycopg[binary]>=3.1",
+  "python-dotenv>=1.0",
+  "pyarrow>=15",
+  "matplotlib>=3.8",
+  "scikit-learn>=1.4",
+  "duckdb>=1.0",
+  "ipykernel>=6.29",
+  # Needed by Quarto to render Python pages.
+  "nbformat>=5.9",
+  "nbclient>=0.10",
+  "pyyaml>=6.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src/python"]

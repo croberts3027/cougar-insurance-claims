@@ -1,0 +1,13 @@
+---
+title: "Start here"
+description: "How to add your own analysis pages. Delete this page once you have one of your own."
+---
+
+Every Quarto (`.qmd`) page in this folder becomes a page on your website and is listed on the **Analyses** page.
+
+To add one, copy the starter for your language from `templates/` and rename it with a number and a short name:
+
+- Python: `templates/starter-python.qmd`
+- R: `templates/starter-r.qmd`
+
+Or run `/new-analysis <name>` in Claude Code. See `docs/getting-started.md` for the full steps.

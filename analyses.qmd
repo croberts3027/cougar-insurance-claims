@@ -1,0 +1,10 @@
+---
+title: "Analyses"
+listing:
+  contents: notebooks
+  type: table
+  sort: "title"
+  fields: [title, description]
+---
+
+Every Quarto page in `notebooks/` appears below. Give each page a `title:` and a short `description:` at the top so it is listed here.

@@ -1,0 +1,19 @@
+---
+title: "Weekly log"
+---
+
+Copy a Week block for each week. Keep entries short.
+
+## Week 1
+
+- **Done:** *TODO*
+- **Next:** *TODO*
+- **Blocked on:** *TODO*
+- **AI used:** *TODO: tool, what you asked, what you changed (or "none"). See `docs/ai-policy.md`.*
+
+## Week 2
+
+- **Done:** *TODO*
+- **Next:** *TODO*
+- **Blocked on:** *TODO*
+- **AI used:** *TODO: tool, what you asked, what you changed (or "none"). See `docs/ai-policy.md`.*

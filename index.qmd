@@ -1,0 +1,21 @@
+---
+title: "Claims Analytics Project"
+---
+
+All data on this site is synthetic. No real claims, people or vehicles are used.
+
+## About me
+
+*TODO: your name, your background, and what you hope to learn this semester.*
+
+## My project
+
+*TODO: one or two sentences on the business question you chose and why it matters.*
+
+## What is on this site
+
+- **[Project plan](project-plan.qmd)**: the question, the target and the scoring point.
+- **[Analyses](analyses.qmd)**: notebooks that show your work.
+- **[Weekly log](weekly-log.qmd)**: what you did each week.
+
+Replace the TODO text, then run `quarto preview` to see the site.
