@@ -122,11 +122,21 @@ This repo is a [Quarto](https://quarto.org) website. Your pages in `notebooks/` 
 
 5. Publish when you are ready, to [Posit Connect Cloud](https://connect.posit.cloud). Create an account there first. Your published site is public by default; restricting who can view it needs a paid plan. Pick one way:
    - **From GitHub** (the site updates each time you push):
-     1. Check the dependency file in the repo root and push it. Python uses `requirements.txt`, which is already there: add any other package your pages import. R needs a `renv.lock` or `manifest.json` that you create.
+     1. Render the site on your computer, then commit and push the result:
+
+        ```bash
+        quarto render
+        git add -A
+        git commit -m "Render site"
+        git push
+        ```
+
+        This saves your results in `_freeze/`. Connect Cloud reuses them: it does not run your code or connect to the database, so it needs no password. Python uses the `requirements.txt` already in the repo root. R needs a `renv.lock` or `manifest.json` that you create.
      2. In Connect Cloud, click **Publish**, then **Quarto**. Choose your repo and branch, and set **Primary file** to `_quarto.yml`.
      3. Leave **Automatically publish on push** on, then click **Publish**.
-     4. If the build fails with a database connection error, add `PGHOST`, `PGDATABASE`, `PGUSER`, `PGPASSWORD` and `PGSSLMODE` under **Variables**. They are stored encrypted. Never put them in a file you commit.
-     
+
+     Each time you change the code in a page, run `quarto render` again and push `_freeze/` with it. If you push changed code without the new `_freeze/`, Connect Cloud tries to run the page, and the build fails because it has no `cougar_claims` package or database login.
+
      On a free Connect Cloud account this only works for a public repo. The course repo is private, so your fork is private too: use the next option, or ask your instructor.
    - **From your computer** (works with a private repo): run `quarto publish posit-connect-cloud` from the repo root. It needs Quarto 1.9 or newer (`quarto --version`). Quarto renders the site on your machine, using your `.env`, and uploads the result. The first time, your browser opens so you can authorize access. It writes `_publish.yml`, which you can commit; it holds no password.
 

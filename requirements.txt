@@ -1,5 +1,5 @@
 # Used only by Posit Connect Cloud when you publish from GitHub. Locally, use `pip install -e .`.
-# Add any other package your pages import (for example scikit-learn).
+# Connect Cloud reuses your saved _freeze/ results and does not run your code, so it only needs this file to exist.
 pandas>=2.2
 SQLAlchemy>=2.0
 psycopg[binary]>=3.1
